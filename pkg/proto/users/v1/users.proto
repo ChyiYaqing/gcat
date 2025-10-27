@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package users.v1;
+option go_package = "github.com/chyiyaqing/gcat/pkg/proto/users/v1";
+
+message StringMessage {
+    string value = 1;
+}
+
+service UserV1Service {
+    rpc Echo(StringMessage) returns (StringMessage) {}
+}
