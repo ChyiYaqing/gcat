@@ -3,6 +3,9 @@ syntax = "proto3";
 package demo.v1;
 option go_package = "github.com/chyiyaqing/gcat/pkg/proto/demo/v1";
 
+import "third_party/vtprotobuf/vtproto/ext.proto";
+
+
 message CreateUserRequest {
     uint64 id = 1;
     string name = 2;
@@ -25,6 +28,20 @@ message CreateUserResponse {
     string email = 8;
 }
 
+// grpc stream with large amount of data
+message Chunk {
+    option (vtproto.mempool) = true; // Enable memory polling
+    bytes data = 2;
+}
+
+message PutResult{}
+message GetRequest{}
+
 service MyService {
+    // Unary
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+
+    // Steam
+    rpc Put(stream Chunk) returns (PutResult) {}
+    rpc Get(GetRequest) returns (stream Chunk) {}
 }

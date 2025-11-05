@@ -1,5 +1,7 @@
 # Run buf generate to generate the Go code for the proto files in this directory.
 version: v2
+inputs:
+  - directory: ../../../../ # 指向项目根目录
 plugins:
   - local: protoc-gen-go
     out: ./
@@ -14,4 +16,4 @@ plugins:
     out: ./
     opt:
       - paths=source_relative
-      - features=marshal+unmarshal+size
+      - features=marshal+unmarshal+size+pool
