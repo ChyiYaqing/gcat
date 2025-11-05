@@ -9,3 +9,9 @@ plugins:
     out: ./
     opt:
       - paths=source_relative
+  # use vtprotobuf for more efficient serialization
+  - local: protoc-gen-go-vtproto
+    out: ./
+    opt:
+      - paths=source_relative
+      - features=marshal+unmarshal+size

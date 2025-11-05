@@ -1,0 +1,16 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/chyiyaqing/gcat/examples/demo3
+cpu: Apple M2
+BenchmarkUnary-8   	   24405	     48114 ns/op
+BenchmarkUnary-8   	   24865	     47995 ns/op
+BenchmarkUnary-8   	   24918	     47918 ns/op
+BenchmarkUnary-8   	   25068	     47822 ns/op
+BenchmarkUnary-8   	   24854	     47990 ns/op
+BenchmarkUnary-8   	   24958	     47879 ns/op
+BenchmarkUnary-8   	   24964	     48250 ns/op
+BenchmarkUnary-8   	   24913	     48005 ns/op
+BenchmarkUnary-8   	   24864	     47963 ns/op
+BenchmarkUnary-8   	   24484	     48090 ns/op
+PASS
+ok  	github.com/chyiyaqing/gcat/examples/demo3	17.098s
