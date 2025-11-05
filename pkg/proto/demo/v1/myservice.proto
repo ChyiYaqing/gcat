@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package demo.v1;
+option go_package = "github.com/chyiyaqing/gcat/pkg/proto/demo/v1";
+
+message CreateUserRequest {
+    uint64 id = 1;
+    string name = 2;
+    uint64 age = 3;
+    bool paid_plan = 4;
+    uint64 createdAt = 5;
+    string status = 6;
+    repeated string subscriptions = 7;
+    string email = 8;
+}
+
+message CreateUserResponse {
+    uint64 id = 1;
+    string name = 2;
+    uint64 age = 3;
+    bool paid_plan = 4;
+    uint64 createdAt = 5;
+    string status = 6;
+    repeated string subscriptions = 7;
+    string email = 8;
+}
+
+service MyService {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+}
